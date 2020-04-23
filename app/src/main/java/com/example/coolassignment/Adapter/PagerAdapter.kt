@@ -6,33 +6,30 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 
 import com.example.coolassignment.Fragment.FlickrFragment
 import com.example.coolassignment.Fragment.UserFragment
+import com.example.coolassignment.Fragment.InfoFragment
 
-class PagerAdapter//Constructor to the class
-(fm: FragmentManager, //integer to count number of tabs
- internal var tabCount: Int)//Initializing tab count
+class PagerAdapter
+(fm: FragmentManager,
+ internal var tabCount: Int)
     : FragmentStatePagerAdapter(fm) {
 
-    //Overriding method getItem
     override fun getItem(position: Int): Fragment {
         var fragment: Fragment? = null
         when (position) {
             0 -> {
-                //  val homeFragment: HomeFragment = HomeFragment()
                 fragment =  UserFragment()
             }
             1 -> {
                 fragment =  FlickrFragment()
             }
-            /*2 -> {
-                // val movieFragment = MovieFragment()
-                return MovieFragment()
-            }*/
+            2 -> {
+                fragment = InfoFragment()
+            }
 
         }
         return fragment!!
     }
 
-    //Overriden method getCount to get the number of tabs
     override fun getCount(): Int {
         return tabCount
     }
@@ -41,9 +38,7 @@ class PagerAdapter//Constructor to the class
         when (position) {
             0 -> return "User"
             1 -> return "Flickr"
-            /*case 2:
-                Tab3 tab3 = new Tab3();
-                return tab3;*/
+            2 -> return "Info"
             else -> return null
         }
 

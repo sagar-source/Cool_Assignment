@@ -14,14 +14,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
         val viewPager: ViewPager = findViewById(R.id.view_pager)
-        //viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabs)
 
         tabs.addTab(tabs.newTab().setText("User"))
         tabs.addTab(tabs.newTab().setText("Flickr"))
-        //tabs!!.addTab(tabs!!.newTab().setText("Movie"))
+        tabs.addTab(tabs.newTab().setText("Info"))
 
         val adapter = PagerAdapter(supportFragmentManager, tabs!!.tabCount)
         viewPager!!.adapter = adapter

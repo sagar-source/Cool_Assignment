@@ -3,14 +3,13 @@ package com.example.coolassignment.ViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
-import com.example.coolassignment.API.API
+import com.example.coolassignment.API.UserAPI
 import com.example.coolassignment.Model.Users
 import com.example.coolassignment.NetworkClient.RetrofitClient
 
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
 
 
 class ViewModel : androidx.lifecycle.ViewModel() {
@@ -36,7 +35,7 @@ class ViewModel : androidx.lifecycle.ViewModel() {
 
         val retrofit = RetrofitClient.retrofitClient
 
-        val api = retrofit!!.create<API>(API::class.java)
+        val api = retrofit!!.create<UserAPI>(UserAPI::class.java)
         val call = api.users
 
 
