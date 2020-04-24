@@ -33,8 +33,7 @@ class FlickrFragment : Fragment() {
 
     internal var list: MutableList<Photo> = ArrayList()
 
-    internal var URL = "https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=bf91986ff941d47074993c154eb752f2&format=json&nojsoncallback=1"
-
+ 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_flickr, container, false)
     }
